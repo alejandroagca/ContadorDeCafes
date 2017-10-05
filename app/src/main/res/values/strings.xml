@@ -4,6 +4,6 @@
     <string name="btnMenos">-</string>
     <string name="txvContador">0</string>
     <string name="txvCafes">Cafés</string>
-    <string name="txvTiempo">1:00</string>
+    <string name="txvTiempo"></string>
     <string name="btnComenzar">Comenzar</string>
 </resources>
