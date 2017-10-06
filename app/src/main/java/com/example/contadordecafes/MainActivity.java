@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button mas;
-    Button menos;
-    Button comenzar;
+    private Button mas;
+    private Button menos;
+    private Button comenzar;
     private TextView contador;
-    TextView tiempo;
+    private TextView tiempo;
     int contadorCafes = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +61,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onTick(long millisUntilFinished) {
-            long minutos = (millisUntilFinished/1000) * 60;
+            long minutos = (millisUntilFinished/1000) / 60;
             long segundos = (millisUntilFinished/1000) % 60;
-            tiempo.setText(minutos + ":" + segundos);
+            tiempo.setText(minutos + "." + segundos);
         }
 
         @Override
-        public void onFinish() {
-            contador.setText(++contadorCafes);
+        public void onFinish()
+        {contador.setText(String.valueOf(++contadorCafes));
+            tiempo.setText("0.00");
         }
     }
 }
